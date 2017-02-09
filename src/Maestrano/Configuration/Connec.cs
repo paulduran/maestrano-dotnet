@@ -8,8 +8,6 @@ namespace Maestrano.Configuration
     {
         private const string ProdDefaultApiHost = "https://api-connec.maestrano.com";
         private const string ProdDefaultBasePath = "/api/v2";
-        private const string TestDefaultApiHost = "http://api-sandbox.maestrano.io";
-        private const string TestDefaultBasePath = "/connec/api/v2";
 
         private string presetName;
 
@@ -52,14 +50,7 @@ namespace Maestrano.Configuration
                 var _host = (String)this["host"];
                 if (string.IsNullOrEmpty(_host))
                 {
-                    if (MnoHelper.With(this.presetName).isProduction())
-                    {
-                        return ProdDefaultApiHost;
-                    }
-                    else
-                    {
-                        return TestDefaultApiHost;
-                    }
+                    return ProdDefaultApiHost;
                 }
                 return _host;
             }
@@ -78,14 +69,7 @@ namespace Maestrano.Configuration
                 var _path = (String)this["base-path"];
                 if (string.IsNullOrEmpty(_path))
                 {
-                    if (MnoHelper.With(this.presetName).isProduction())
-                    {
-                        return ProdDefaultBasePath;
-                    }
-                    else
-                    {
-                        return TestDefaultBasePath;
-                    }
+                    return ProdDefaultBasePath;
                 }
                 return _path;
             }

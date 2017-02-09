@@ -92,16 +92,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\BillWithPresetTest.cs" />
-    <Compile Include="Account\BillTest.cs" />
-    <Compile Include="Account\GroupWithPresetTest.cs" />
-    <Compile Include="Account\RecurringBillWithPresetTest.cs" />
-    <Compile Include="Account\RecurringBillTest.cs" />
-    <Compile Include="Account\GroupTest.cs" />
-    <Compile Include="Account\UserWithPresetTest.cs" />
-    <Compile Include="Account\UserTest.cs" />
     <Compile Include="Api\MnoClientTest.cs" />
-    <Compile Include="Connec\ClientTest.cs" />
     <Compile Include="Helpers\TimeZoneConverterTests.cs" />
     <Compile Include="IntegrationTest\MaestranoTest.cs" />
     <Compile Include="MaestranoConfigurationWithPresetTests.cs" />
@@ -147,7 +138,10 @@
   <ItemGroup>
     <None Include="Support\Saml\Certificates\certificate1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="Connec\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

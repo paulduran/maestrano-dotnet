@@ -211,7 +211,7 @@ namespace Maestrano.Tests
 
             Settings settings = MnoHelper.Sso.SamlSettings();
 
-            Assert.AreEqual("https://maestrano.com/api/v1/auth/saml", settings.IdpSsoTargetUrl);
+            Assert.AreEqual("https://api-hub.maestrano.com/api/v1/auth/saml", settings.IdpSsoTargetUrl);
             Assert.AreEqual(MnoHelper.Api.Id, settings.Issuer);
             Assert.AreEqual(MnoHelper.Sso.NameIdFormat, settings.NameIdentifierFormat);
             Assert.AreEqual(MnoHelper.Sso.Idm + MnoHelper.Sso.ConsumePath, settings.AssertionConsumerServiceUrl);

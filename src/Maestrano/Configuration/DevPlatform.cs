@@ -5,7 +5,7 @@ namespace Maestrano.Configuration
 {
     public class DevPlatform : ConfigurationSection
     {
-        private const string ProdDefaultHost = "https://dev-platform.maestrano.com";
+        private const string ProdDefaultHost = "https://developer.maestrano.com";
         private const string ProdDefaultApiPath = "/api/config/v1";
 
 

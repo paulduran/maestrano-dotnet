@@ -187,6 +187,15 @@ namespace Maestrano.Sso
         }
 
         /// <summary>
+        /// return the Maestrano logout url to be used for redirecting a user after logout
+        /// </summary>
+        public string LogoutUrl()
+        {
+            return MnoHelper.With(presetName).Sso.LogoutUrl(this.Uid);
+        }
+
+
+        /// <summary>
         /// Return wether the session is valid or not. Perform
         /// remote check to maestrano if recheck is overdue.
         /// </summary>

@@ -6,8 +6,7 @@ namespace Maestrano.Configuration
 {
     public class Api : ConfigurationSection
     {
-        private const string ProdDefaultApiHost = "https://maestrano.com";
-        private const string TestDefaultApiHost = "http://api-sandbox.maestrano.io";
+        private const string ProdDefaultApiHost = "https://api-hub.maestrano.com";
 
         private string presetName;
 
@@ -49,7 +48,7 @@ namespace Maestrano.Configuration
         }
 
         /// <summary>
-        /// API Id (from sandbox or maestrano.com)
+        /// API Id
         /// </summary>
         [ConfigurationProperty("id", DefaultValue = null, IsRequired = false)]
         public String Id
@@ -59,7 +58,7 @@ namespace Maestrano.Configuration
         }
 
         /// <summary>
-        /// API Key (from sandbox or maestrano.com)
+        /// API Key
         /// </summary>
         [ConfigurationProperty("key", DefaultValue = null, IsRequired = false)]
         public String Key
@@ -69,7 +68,7 @@ namespace Maestrano.Configuration
         }
 
         /// <summary>
-        /// API Key (from sandbox or maestrano.com)
+        /// API Key
         /// </summary>
         [ConfigurationProperty("base", DefaultValue = "/api/v1/", IsRequired = false)]
         public String Base
@@ -112,14 +111,7 @@ namespace Maestrano.Configuration
                 var _idp = (String)this["host"];
                 if (string.IsNullOrEmpty(_idp))
                 {
-                    if (MnoHelper.With(this.presetName).isProduction())
-                    {
-                        return ProdDefaultApiHost;
-                    }
-                    else
-                    {
-                        return TestDefaultApiHost;
-                    }
+                    return ProdDefaultApiHost;
                 }
                 return _idp;
             }

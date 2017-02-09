@@ -139,6 +139,8 @@ namespace Maestrano.Configuration
         /// Return whether the environment is production like (production or production sandbox)
         /// </summary>
         /// <returns>true for production and production-sandbox</returns>
+        /// 
+        [Obsolete("isProduction is deprecated")]
         public Boolean isProduction()
         {
             return Environment.Equals("production", StringComparison.InvariantCultureIgnoreCase)
@@ -149,6 +151,7 @@ namespace Maestrano.Configuration
         /// Return whether the environment is production like (production or production sandbox)
         /// </summary>
         /// <returns>true for production and production-sandbox</returns>
+        [Obsolete("isDevelopment is deprecated")]
         public Boolean isDevelopment()
         {
             return !isProduction();

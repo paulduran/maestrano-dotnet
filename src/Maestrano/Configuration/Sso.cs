@@ -11,20 +11,14 @@ namespace Maestrano.Configuration
     public class Sso : ConfigurationSection
     {
 
-        private const string ProdIdpHost = "https://maestrano.com";
+        private const string ProdIdpHost = "https://api-hub.maestrano.com";
         private const string ProdX509CertFootprint = "2f:57:71:e4:40:19:57:37:a6:2c:f0:c5:82:52:2f:2e:41:b7:9d:7e";
         private const string ProdX509Cert = "-----BEGIN CERTIFICATE-----\nMIIDezCCAuSgAwIBAgIJAPFpcH2rW0pyMA0GCSqGSIb3DQEBBQUAMIGGMQswCQYD\nVQQGEwJBVTEMMAoGA1UECBMDTlNXMQ8wDQYDVQQHEwZTeWRuZXkxGjAYBgNVBAoT\nEU1hZXN0cmFubyBQdHkgTHRkMRYwFAYDVQQDEw1tYWVzdHJhbm8uY29tMSQwIgYJ\nKoZIhvcNAQkBFhVzdXBwb3J0QG1hZXN0cmFuby5jb20wHhcNMTQwMTA0MDUyNDEw\nWhcNMzMxMjMwMDUyNDEwWjCBhjELMAkGA1UEBhMCQVUxDDAKBgNVBAgTA05TVzEP\nMA0GA1UEBxMGU3lkbmV5MRowGAYDVQQKExFNYWVzdHJhbm8gUHR5IEx0ZDEWMBQG\nA1UEAxMNbWFlc3RyYW5vLmNvbTEkMCIGCSqGSIb3DQEJARYVc3VwcG9ydEBtYWVz\ndHJhbm8uY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD3feNNn2xfEz5/\nQvkBIu2keh9NNhobpre8U4r1qC7h7OeInTldmxGL4cLHw4ZAqKbJVrlFWqNevM5V\nZBkDe4mjuVkK6rYK1ZK7eVk59BicRksVKRmdhXbANk/C5sESUsQv1wLZyrF5Iq8m\na9Oy4oYrIsEF2uHzCouTKM5n+O4DkwIDAQABo4HuMIHrMB0GA1UdDgQWBBSd/X0L\n/Pq+ZkHvItMtLnxMCAMdhjCBuwYDVR0jBIGzMIGwgBSd/X0L/Pq+ZkHvItMtLnxM\nCAMdhqGBjKSBiTCBhjELMAkGA1UEBhMCQVUxDDAKBgNVBAgTA05TVzEPMA0GA1UE\nBxMGU3lkbmV5MRowGAYDVQQKExFNYWVzdHJhbm8gUHR5IEx0ZDEWMBQGA1UEAxMN\nbWFlc3RyYW5vLmNvbTEkMCIGCSqGSIb3DQEJARYVc3VwcG9ydEBtYWVzdHJhbm8u\nY29tggkA8WlwfatbSnIwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQDE\nhe/18oRh8EqIhOl0bPk6BG49AkjhZZezrRJkCFp4dZxaBjwZTddwo8O5KHwkFGdy\nyLiPV326dtvXoKa9RFJvoJiSTQLEn5mO1NzWYnBMLtrDWojOe6Ltvn3x0HVo/iHh\nJShjAn6ZYX43Tjl1YXDd1H9O+7/VgEWAQQ32v8p5lA==\n-----END CERTIFICATE-----";
-        private const string TestIdpHost = "http://api-sandbox.maestrano.io";
-        private const string TestX509CertFootprint = "01:06:15:89:25:7d:78:12:28:a6:69:c7:de:63:ed:74:21:f9:f5:36";
-        private const string TestX509Cert = "-----BEGIN CERTIFICATE-----\nMIIDezCCAuSgAwIBAgIJAOehBr+YIrhjMA0GCSqGSIb3DQEBBQUAMIGGMQswCQYD\nVQQGEwJBVTEMMAoGA1UECBMDTlNXMQ8wDQYDVQQHEwZTeWRuZXkxGjAYBgNVBAoT\nEU1hZXN0cmFubyBQdHkgTHRkMRYwFAYDVQQDEw1tYWVzdHJhbm8uY29tMSQwIgYJ\nKoZIhvcNAQkBFhVzdXBwb3J0QG1hZXN0cmFuby5jb20wHhcNMTQwMTA0MDUyMjM5\nWhcNMzMxMjMwMDUyMjM5WjCBhjELMAkGA1UEBhMCQVUxDDAKBgNVBAgTA05TVzEP\nMA0GA1UEBxMGU3lkbmV5MRowGAYDVQQKExFNYWVzdHJhbm8gUHR5IEx0ZDEWMBQG\nA1UEAxMNbWFlc3RyYW5vLmNvbTEkMCIGCSqGSIb3DQEJARYVc3VwcG9ydEBtYWVz\ndHJhbm8uY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVkIqo5t5Paflu\nP2zbSbzxn29n6HxKnTcsubycLBEs0jkTkdG7seF1LPqnXl8jFM9NGPiBFkiaR15I\n5w482IW6mC7s8T2CbZEL3qqQEAzztEPnxQg0twswyIZWNyuHYzf9fw0AnohBhGu2\n28EZWaezzT2F333FOVGSsTn1+u6tFwIDAQABo4HuMIHrMB0GA1UdDgQWBBSvrNxo\neHDm9nhKnkdpe0lZjYD1GzCBuwYDVR0jBIGzMIGwgBSvrNxoeHDm9nhKnkdpe0lZ\njYD1G6GBjKSBiTCBhjELMAkGA1UEBhMCQVUxDDAKBgNVBAgTA05TVzEPMA0GA1UE\nBxMGU3lkbmV5MRowGAYDVQQKExFNYWVzdHJhbm8gUHR5IEx0ZDEWMBQGA1UEAxMN\nbWFlc3RyYW5vLmNvbTEkMCIGCSqGSIb3DQEJARYVc3VwcG9ydEBtYWVzdHJhbm8u\nY29tggkA56EGv5giuGMwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCc\nMPgV0CpumKRMulOeZwdpnyLQI/NTr3VVHhDDxxCzcB0zlZ2xyDACGnIG2cQJJxfc\n2GcsFnb0BMw48K6TEhAaV92Q7bt1/TYRvprvhxUNMX2N8PHaYELFG2nWfQ4vqxES\nRkjkjqy+H7vir/MOF3rlFjiv5twAbDKYHXDT7v1YCg==\n-----END CERTIFICATE-----";
 
         private const string IdpDefaultNameId = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent";
         private const string SamlIdpPath = "/api/v1/auth/saml";
         private const string IdpLogoutPath = "/app_logout";
         private const string IdpUnauthorizedPath = "/app_access_unauthorized";
-
-        private const string SsoDefaultLocalInitPath = "/maestrano/auth/saml/init.aspx";
-        private const string SsoDefaultLocalConsumePath = "/maestrano/auth/saml/consume.aspx";
 
         private string presetName;
 
@@ -101,7 +95,7 @@ namespace Maestrano.Configuration
         /// <summary>
         /// Path to init action
         /// </summary>
-        [ConfigurationProperty("initPath", DefaultValue = SsoDefaultLocalInitPath, IsRequired = false)]
+        [ConfigurationProperty("initPath", IsRequired = false)]
         public string InitPath
         {
             get { return (String)this["initPath"]; }
@@ -111,7 +105,7 @@ namespace Maestrano.Configuration
         /// <summary>
         /// Path to consume action
         /// </summary>
-        [ConfigurationProperty("consumePath", DefaultValue = SsoDefaultLocalConsumePath, IsRequired = false)]
+        [ConfigurationProperty("consumePath", IsRequired = false)]
         public string ConsumePath
         {
             get { return (String)this["consumePath"]; }
@@ -151,12 +145,7 @@ namespace Maestrano.Configuration
             {
                 var _idp = (String)this["idp"];
                 if(string.IsNullOrEmpty(_idp)) {
-                    if (MnoHelper.With(this.presetName).isProduction())
-                    {
-                        return ProdIdpHost;
-                    } else {
-                        return TestIdpHost;
-                    }
+                    return ProdIdpHost;
                 }
                 return _idp;
             }
@@ -186,12 +175,7 @@ namespace Maestrano.Configuration
             {
                 var _x509fingerprint = (String)this["x509Fingerprint"];
                 if(string.IsNullOrEmpty(_x509fingerprint)) {
-                    if (MnoHelper.With(this.presetName).isProduction())
-                    {
-                        return ProdX509CertFootprint;
-                    } else {
-                        return TestX509CertFootprint;
-                    }
+                    return ProdX509CertFootprint;
                 }
                 return _x509fingerprint;
             }
@@ -208,12 +192,7 @@ namespace Maestrano.Configuration
                 var _509certificate = (String)this["x509Certificate"];
                 if (string.IsNullOrEmpty(_509certificate))
                 {
-                    if (MnoHelper.With(this.presetName).isProduction())
-                    {
-                        return ProdX509Cert;
-                    } else {
-                        return TestX509Cert;
-                    }
+                    return ProdX509Cert;
                 }
                 return _509certificate;
             }
@@ -242,21 +221,37 @@ namespace Maestrano.Configuration
         /// <summary>
         /// Return the complete SSO consume url for this application
         /// </summary>
-        /// <returns></returns>
         public string ConsumeUrl()
         {
             return Idm + ConsumePath;
         }
 
         /// <summary>
-        /// Return the Maestrano logout url to be used for
-        /// redirecting a user after logout
+        /// return the Maestrano logout url to be used for redirecting a user after logout
         /// </summary>
-        /// <returns></returns>
+        [Obsolete("LogoutUrl is deprecated, please use LogoutUrl(userUid) instead.")]
         public string LogoutUrl()
         {
             return Idp + IdpLogoutPath;
         }
+
+        /// <summary>
+        /// return the Maestrano logout url to be used for redirecting a user after logout
+        /// </summary>
+        public string LogoutUrl(Account.User user)
+        {
+            return LogoutUrl(user.Id);
+        }
+
+        /// <summary>
+        /// return the Maestrano logout url to be used for redirecting a user after logout
+        /// </summary>
+        public string LogoutUrl(String  userUid)
+        {
+            return Idp + IdpLogoutPath + "?user_uid=" + userUid;
+        }
+
+
 
         /// <summary>
         /// Return the Maestrano unauthorized page url to
